@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foodtrends2027.com/sitemap.xml
