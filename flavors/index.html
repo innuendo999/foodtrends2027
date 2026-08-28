@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="/assets/favicon.svg" />
 <meta name="theme-color" content="#0d253d" />
 <link rel="canonical" href="https://foodtrends2027.com/flavors/" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="FoodTrends2027" />
 <meta property="og:locale" content="en_US" />
@@ -37,6 +37,7 @@
 <meta name="twitter:image:alt" content="The 2027 flavor lifecycle map, from matcha growth to ube and yuzu decline." />
 <style>
   html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 92px; }
   body { margin: 0; background: #ffffff; color: #273951; font-family: Inter, 'SF Pro Display', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 15px; font-feature-settings: "ss01"; -webkit-font-smoothing: antialiased; }
   a { color: #533afd; text-decoration: none; }
   a:hover { color: #4434d4; text-decoration: underline; text-underline-offset: 3px; }
@@ -52,7 +53,14 @@
     [data-split] { grid-template-columns: 1fr !important; gap: 40px !important; align-items: start !important; }
     [data-h1] { font-size: 36px !important; letter-spacing: -0.72px !important; }
     [data-pad] { padding-left: 20px !important; padding-right: 20px !important; }
-    [data-footer-grid] { grid-template-columns: 1fr 1fr !important; }
+    [data-footer-grid] { grid-template-columns: 1fr !important; gap: 32px !important; }
+  }
+  @media (max-width: 700px) {
+    [data-navbar] { border-radius: 22px !important; height: auto !important; flex-direction: column; align-items: stretch !important; gap: 0 !important; padding: 12px 16px !important; }
+    [data-navtop] { justify-content: space-between; width: 100%; }
+    [data-navactions] { width: 100%; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(13,37,61,0.10); justify-content: space-between !important; gap: 12px !important; }
+    [data-navlinks] { gap: 14px !important; }
+    [data-navlinks] a { font-size: 13px !important; }
   }
 </style>
 <script type="application/ld+json">
@@ -205,7 +213,7 @@
         {
           "@type": "Question",
           "name": "Is matcha still trending in 2027?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Matcha is still trending going into 2027, with nuance. The base flavor grew 26.1 percent year over year in US social food conversation as of July 2026, and extensions such as strawberry matcha grew 16.4 percent. The default 2024 era serve is fading though, with matcha latte as a standalone term down 17.3 percent, so the growth sits in new formats and pairings rather than the familiar latte." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Matcha is still trending going into 2027, with nuance. The base flavor grew 26.1 percent year over year in US social food conversation as of July 2026, and extensions such as strawberry matcha grew 16.4 percent. The default 2024 era serve is fading though, with matcha latte as a standalone term down 17.3 percent, so the growth sits in new formats and pairings rather than the familiar latte. The full 2027 flavor report is published on Tastewise." }
         }
       ]
     }
@@ -216,59 +224,70 @@
 
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #e3e8ee">
-  <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-    <a href="/" aria-label="FoodTrends2027 home" style="display:block"><img src="/assets/logo.svg" alt="FoodTrends2027" width="196" height="28" style="height:26px;width:auto;display:block"></a>
-    <div style="display:flex;align-items:center;gap:22px">
-      <a href="/" style="font-size:14px;color:#273951;text-decoration:none">Home</a>
-      <a href="/forecast/" style="font-size:14px;color:#273951;text-decoration:none">2027 forecast</a>
-      <a href="/flavors/" aria-current="page" style="font-size:14px;color:#533afd;font-weight:600;text-decoration:none">Flavors forecast</a>
+<div style="position:sticky;top:0;z-index:50;padding:14px 20px 0;background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,255,255,0))">
+  <nav aria-label="Primary" data-navbar="1" style="max-width:1240px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.58));backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);border:1px solid rgba(255,255,255,0.9);box-shadow:rgba(13,37,61,0.10) 0 12px 32px, rgba(13,37,61,0.05) 0 2px 8px, inset rgba(255,255,255,0.9) 0 1px 0;border-radius:9999px;padding:0 12px 0 22px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <div data-navtop="1" style="display:flex;align-items:center;gap:18px;min-width:0">
+      <a href="/" aria-label="foodtrends27 home" style="display:block;flex:none"><img src="/assets/logo.svg" alt="foodtrends27" width="172" height="32" style="height:24px;width:auto;display:block"></a>
+      <span aria-hidden="true" style="width:1px;height:22px;background:rgba(13,37,61,0.14);flex:none"></span>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-nav-credit" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:7px;text-decoration:none;flex:none">
+        <span style="font-size:12px;color:#5a6579;white-space:nowrap">Data by</span>
+        <img src="/assets/tastewise-logo.svg" alt="Tastewise" width="255" height="56" style="height:17px;width:auto;display:block">
+      </a>
     </div>
-  </div>
-</nav>
+    <div data-navactions="1" style="display:flex;align-items:center;gap:20px">
+      <div data-navlinks="1" style="display:flex;align-items:center;gap:20px">
+        <a href="/" style="font-size:14px;color:#273951;font-weight:400;text-decoration:none">Home</a>
+        <a href="/forecast/" style="font-size:14px;color:#273951;font-weight:400;text-decoration:none">2027 forecast</a>
+        <a href="/flavors/" aria-current="page" style="font-size:14px;color:#533afd;font-weight:500;text-decoration:none">Flavors forecast</a>
+      </div>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-nav-button" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#0d253d;font-size:14px;font-weight:500;border-radius:9999px;padding:9px 18px;text-decoration:none;border:1px solid rgba(255,255,255,0.9);box-shadow:rgba(13,37,61,0.08) 0 2px 8px">Get the report</a>
+    </div>
+  </nav>
+</div>
 
 <main id="main">
 <section aria-labelledby="hero-heading" style="position:relative;overflow:hidden;background:#ffffff">
-  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:540px;background:radial-gradient(62% 120% at 6% 0%, #f5e9d4 0%, rgba(245,233,212,0) 60%), radial-gradient(46% 110% at 30% 6%, #ffd9a8 0%, rgba(255,217,168,0) 62%), radial-gradient(56% 130% at 56% 0%, #cbc6fe 0%, rgba(203,198,254,0) 64%), radial-gradient(48% 120% at 80% 6%, #533afd 0%, rgba(83,58,253,0) 60%), radial-gradient(42% 100% at 97% 22%, #ea2261 0%, rgba(234,34,97,0) 58%);filter:blur(28px);opacity:0.6"></div>
+  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:540px;background:radial-gradient(62% 120% at 6% 0%, #f5e9d4 0%, rgba(245,233,212,0) 60%), radial-gradient(46% 110% at 30% 6%, #ffd9a8 0%, rgba(255,217,168,0) 62%), radial-gradient(56% 130% at 56% 0%, #cbc6fe 0%, rgba(203,198,254,0) 64%), radial-gradient(48% 120% at 80% 6%, #533afd 0%, rgba(83,58,253,0) 60%), radial-gradient(42% 100% at 97% 22%, #c2154a 0%, rgba(234,34,97,0) 58%);filter:blur(28px);opacity:0.6"></div>
   <div data-pad="1" data-split="1" style="position:relative;max-width:1240px;margin:0 auto;padding:88px 32px 72px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:end">
     <div>
-      <nav aria-label="Breadcrumb" style="margin:0 0 20px;font-size:13px;letter-spacing:-0.39px;color:#64748d"><a href="/" style="color:#64748d">Home</a> / Flavors forecast</nav>
+      <nav aria-label="Breadcrumb" style="margin:0 0 20px;font-size:13px;letter-spacing:-0.39px;color:#5a6579"><a href="/" style="color:#5a6579">Home</a> / Flavors forecast</nav>
       <h1 id="hero-heading" data-h1="1" style="margin:0;font-size:56px;line-height:1.03;letter-spacing:-1.4px;font-weight:300;color:#0d253d;max-width:19ch;text-wrap:pretty">Food flavors forecast 2027: what wins, what peaks, what fades</h1>
       <p style="margin:24px 0 0;font-size:16px;line-height:1.5;color:#273951;max-width:54ch">Grow, hold and exit calls for fifteen flavors and texture claims, each scored by lifecycle stage rather than editorial opinion.</p>
+      <div style="margin:32px 0 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-hero-cta" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#533afd;color:#ffffff;font-size:15px;font-weight:500;border-radius:9999px;padding:11px 22px;text-decoration:none;box-shadow:rgba(83,58,253,0.28) 0 6px 18px">Get the 2027 flavor report</a>
+        <a href="#trend-data" style="font-size:15px;color:#533afd;text-decoration:none">Read the data first</a>
+      </div>
+      <p style="margin:16px 0 0;font-size:13px;color:#5a6579">Full report on Tastewise. Free, no download gate.</p>
     </div>
-    <aside aria-labelledby="calls-label" style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;box-shadow:rgba(0,55,112,0.08) 0 8px 24px, rgba(0,55,112,0.04) 0 2px 6px;padding:24px">
-      <p id="calls-label" style="margin:0 0 8px;font-size:13px;letter-spacing:-0.39px;color:#64748d">Flavor calls, year over year to July 2026</p>
-      <dl style="margin:0">
+    <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;box-shadow:rgba(0,55,112,0.08) 0 8px 24px, rgba(0,55,112,0.04) 0 2px 6px;padding:24px">
+      <p style="margin:0 0 8px;font-size:13px;letter-spacing:-0.39px;color:#5a6579">Flavor calls, year over year to July 2026</p>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Cold foam texture</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+57%</dd>
+          <span style="font-size:15px;color:#0d253d">Cold foam texture</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+57%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Matcha</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+26.1%</dd>
+          <span style="font-size:15px;color:#0d253d">Matcha</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+26.1%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Strawberry matcha</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+16.4%</dd>
+          <span style="font-size:15px;color:#0d253d">Strawberry matcha</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+16.4%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Boba</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">-31.7%</dd>
+          <span style="font-size:15px;color:#0d253d">Boba</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">-31.7%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0">
-          <dt style="font-size:15px;color:#0d253d">Green tea</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">-40.8%</dd>
+          <span style="font-size:15px;color:#0d253d">Green tea</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">-40.8%</span>
         </div>
-      </dl>
-      <p style="margin:16px 0 0;font-size:11px;line-height:1.4;color:#64748d">Analysis of US social, menu and retail food data, <time datetime="2026-07">July 2026</time>.</p>
-    </aside>
+      <p style="margin:16px 0 0;font-size:11px;line-height:1.4;color:#5a6579">Analysis of US social, menu and retail food data, July 2026.</p>
+    </div>
   </div>
 </section>
 
-<section aria-labelledby="definition-heading" style="background:#ffffff">
+<section aria-label="What a food flavors forecast is" style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:64px 32px">
-
-  <h2 id="definition-heading" class="sr-only">What is a food flavors forecast?</h2>
 
   <div id="definition" style="border:1px solid #e3e8ee;background:#ffffff;border-radius:12px;padding:28px;margin:0 0 20px">
     <p style="margin:0;font-size:20px;line-height:32px;color:#0d253d">A food flavors forecast is a projection of which flavors will grow or decline across menus, retail products and consumer conversation in a coming period, based on each flavor's current lifecycle stage and year over year growth rather than editorial opinion.</p>
@@ -282,27 +301,30 @@
     </div>
 </section>
 
-<section aria-labelledby="flavor-of-year" style="background:#f6f9fc">
+<section id="trend-data" aria-labelledby="flavor-of-year" style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
     <h2 id="flavor-of-year" style="margin:0 0 8px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Flavor of the year 2027: matcha and its ecosystem</h2>
-    <p style="margin:0 0 24px;font-size:12px;color:#64748d">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
+    <p style="margin:0 0 24px;font-size:12px;color:#5a6579">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
 
+    <div style="position:relative;aspect-ratio:21/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5);margin:0 0 28px">
+      <img src="https://images.unsplash.com/photo-1717398804998-ad2d48822518?fm=jpg&amp;q=72&amp;w=2000&amp;auto=format&amp;fit=crop" alt="Close up of an iced matcha drink with ice cubes in a glass" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:0 0 28px">
       <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
         <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#533afd">+26.1%</p>
-        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">Matcha, YoY US social growth</p>
+        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">Matcha, YoY US social growth</p>
       </div>
       <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
         <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#0d253d">77%</p>
-        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">Social share of the specialty flavor conversation</p>
+        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">Social share of the specialty flavor conversation</p>
       </div>
       <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
         <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#0d253d">8.5%</p>
-        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">Matcha menu share</p>
+        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">Matcha menu share</p>
       </div>
       <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
-        <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#ea2261">-17.3%</p>
-        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">Matcha latte as a standalone term, YoY</p>
+        <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#c2154a">-17.3%</p>
+        <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">Matcha latte as a standalone term, YoY</p>
       </div>
     </div>
 
@@ -312,15 +334,15 @@
     </div>
 </section>
 
-  <section aria-labelledby="lifecycle-map" style="background:#ffffff">
+  <section style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="lifecycle-map" style="margin:0 0 8px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">The flavor lifecycle map for 2027</h2>
+    <h2 style="margin:0 0 8px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">The flavor lifecycle map for 2027</h2>
     <p style="margin:0 0 8px;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Every tracked flavor carries a lifecycle stage and a 2027 call. Grow means commit budget, hold means maintain without new investment, exit means release the shelf or menu space.</p>
-    <p style="margin:0 0 24px;font-size:12px;color:#64748d">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
+    <p style="margin:0 0 24px;font-size:12px;color:#5a6579">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
 
     <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;overflow:hidden">
       <table style="width:100%;border-collapse:collapse;font-size:17px">
-        <caption style="text-align:left;padding:20px 24px 12px;font-size:14px;font-weight:600;color:#64748d">2027 flavor calls, US social food conversation, year over year to July 2026</caption>
+        <caption style="text-align:left;padding:20px 24px 12px;font-size:14px;font-weight:600;color:#5a6579">2027 flavor calls, US social food conversation, year over year to July 2026</caption>
         <thead>
           <tr style="border-top:1px solid #e3e8ee;border-bottom:1px solid #e3e8ee;background:#f6f9fc">
             <th scope="col" style="text-align:left;padding:12px 24px;font-size:14px;font-weight:600">Flavor</th>
@@ -330,26 +352,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="background:#f5e9d4;border-bottom:1px solid #f6f9fc"><th scope="colgroup" colspan="4" style="text-align:left;padding:10px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#533afd">Grow</th></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Cold foam textures</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+57%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#9b6829;background:#f5e9d4;border-radius:9999px;padding:4px 10px">Emerging</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Banana</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+36.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#9b6829;background:#f5e9d4;border-radius:9999px;padding:4px 10px">Emerging</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
+          <tr style="background:#f5e9d4;border-bottom:1px solid #f6f9fc"><th scope="rowgroup" colspan="4" style="text-align:left;padding:10px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#533afd">Grow</th></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Cold foam textures</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+57%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#845418;background:#f5e9d4;border-radius:9999px;padding:4px 10px">Emerging</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Banana</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+36.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#845418;background:#f5e9d4;border-radius:9999px;padding:4px 10px">Emerging</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
           <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Matcha</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+26.1%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Strawberry matcha</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+16.4%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#9b6829;background:#f5e9d4;border-radius:9999px;padding:4px 10px">Emerging</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Strawberry matcha</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">+16.4%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#845418;background:#f5e9d4;border-radius:9999px;padding:4px 10px">Emerging</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#533afd">Grow</td></tr>
 
-          <tr style="background:#f6f9fc;border-bottom:1px solid #f6f9fc"><th scope="colgroup" colspan="4" style="text-align:left;padding:10px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#273951">Hold</th></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Cinnamon</th><td style="padding:12px 24px;text-align:right;font-weight:600">+4.5%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#64748d;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Mango</th><td style="padding:12px 24px;text-align:right;font-weight:600">+3.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#64748d;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Pistachio</th><td style="padding:12px 24px;text-align:right;font-weight:600">+2.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#64748d;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Tiramisu</th><td style="padding:12px 24px;text-align:right;font-weight:600">+0.5%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#64748d;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Caramel</th><td style="padding:12px 24px;text-align:right;font-weight:600">-2.3%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#64748d;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
+          <tr style="background:#f6f9fc;border-bottom:1px solid #f6f9fc"><th scope="rowgroup" colspan="4" style="text-align:left;padding:10px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#273951">Hold</th></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Cinnamon</th><td style="padding:12px 24px;text-align:right;font-weight:600">+4.5%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#5a6579;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Mango</th><td style="padding:12px 24px;text-align:right;font-weight:600">+3.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#5a6579;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Pistachio</th><td style="padding:12px 24px;text-align:right;font-weight:600">+2.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#5a6579;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Tiramisu</th><td style="padding:12px 24px;text-align:right;font-weight:600">+0.5%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#5a6579;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Caramel</th><td style="padding:12px 24px;text-align:right;font-weight:600">-2.3%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#5a6579;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Mature</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#273951">Hold</td></tr>
 
-          <tr style="background:#f6f9fc;border-bottom:1px solid #f6f9fc"><th scope="colgroup" colspan="4" style="text-align:left;padding:10px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#ea2261">Exit</th></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Lavender</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">-20.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">Exit</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Ube</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">-21.6%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">Exit</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Mochi</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">-26.5%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">Exit</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Yuzu</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">-28.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">Exit</td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Boba</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">-31.7%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">Exit</td></tr>
-          <tr><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Green tea</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">-40.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#ea2261">Exit</td></tr>
+          <tr style="background:#f6f9fc;border-bottom:1px solid #f6f9fc"><th scope="rowgroup" colspan="4" style="text-align:left;padding:10px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#c2154a">Exit</th></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Lavender</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">-20.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">Exit</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Ube</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">-21.6%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">Exit</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Mochi</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">-26.5%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">Exit</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Yuzu</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">-28.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">Exit</td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Boba</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">-31.7%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">Exit</td></tr>
+          <tr><th scope="row" style="text-align:left;padding:12px 24px;font-weight:400">Green tea</th><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">-40.8%</td><td style="padding:12px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td><td style="padding:12px 24px;text-align:right;font-weight:600;color:#c2154a">Exit</td></tr>
         </tbody>
       </table>
     </div>
@@ -357,13 +379,16 @@
 </section>
 
   <sc-if value="{{ showCategorySections }}" hint-placeholder-val="{{ true }}">
-  <section aria-labelledby="by-category" style="background:#f6f9fc">
+  <section style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="by-category" style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Flavor trends 2027 by category</h2>
+    <h2 style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Flavor trends 2027 by category</h2>
     <div>
 
       <div style="border-top:1px solid #e3e8ee;padding:32px 0">
-        <h3 style="margin:0 0 14px;font-size:26px;font-weight:300;letter-spacing:-0.26px">Beverage flavor trends 2027</h3>
+                <div style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5);margin:0 0 20px">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?fm=jpg&amp;q=72&amp;w=900&amp;auto=format&amp;fit=crop" alt="Iced coffee in a tall glass on a wooden table" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+<h3 style="margin:0 0 14px;font-size:26px;font-weight:300;letter-spacing:-0.26px">Beverage flavor trends 2027</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Matcha formats lead the 2027 beverage flavor call, supported by cold foam texture at 57 percent year over year growth. Latte grew 9.9 percent at a 9.1 percent US menu share, and soda remains trending at a 40.8 percent menu share, the widest available distribution for a new serve. The pattern across all three is that format is carrying the flavor rather than the reverse. <strong style="font-weight:600">Action:</strong> lead the 2027 beverage line with a texture claim and attach the flavor to it.</p>
       </div>
 
@@ -378,7 +403,10 @@
       </div>
 
       <div style="border-top:1px solid #e3e8ee;padding:32px 0">
-        <h3 style="margin:0 0 14px;font-size:26px;font-weight:300;letter-spacing:-0.26px">Ice cream and dessert flavor trends 2027</h3>
+                <div style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5);margin:0 0 20px">
+          <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?fm=jpg&amp;q=72&amp;w=900&amp;auto=format&amp;fit=crop" alt="Layered chocolate dessert in a glass jar beside cookies" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+<h3 style="margin:0 0 14px;font-size:26px;font-weight:300;letter-spacing:-0.26px">Ice cream and dessert flavor trends 2027</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Pistachio is mature at 2.8 percent year over year growth and tiramisu is stable at 0.5 percent, so both hold their place without justifying new investment. Matcha desserts are the growth entry point for 2027, carried by the 26.1 percent growth in the base flavor. Ube, down 21.6 percent, and mochi, down 26.5 percent, are in decline and should release freezer and menu space. <strong style="font-weight:600">Action:</strong> fund a matcha dessert line from space currently held by the declining specialty flavors.</p>
       </div>
 
@@ -393,28 +421,28 @@
   </sc-if>
 
   <sc-if value="{{ showTextureThesis }}" hint-placeholder-val="{{ true }}">
-  <section aria-labelledby="texture-thesis" style="background:#ffffff">
+  <section style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <div style="background:#1c1e54;border-radius:12px;padding:40px">
-      <h2 id="texture-thesis" style="margin:0 0 20px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300;color:#ffffff">Texture is the new flavor</h2>
-      <dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:0 0 24px">
+    <div style="background-color:#1c1e54;background-image:linear-gradient(rgba(13,20,64,0.82),rgba(13,20,64,0.9)),url('https://images.unsplash.com/photo-1565802700474-1c8b57596859?fm=jpg&amp;q=72&amp;w=1600&amp;auto=format&amp;fit=crop');background-size:cover;background-position:center;border-radius:12px;padding:40px">
+      <h2 style="margin:0 0 20px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300;color:#ffffff">Texture is the new flavor</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:0 0 24px">
         <div style="border:1px solid rgba(255,255,255,0.32);border-radius:12px;padding:20px">
-          <dd style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+57%</dd>
-          <dt style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Cold foam, YoY</dt>
+          <p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+57%</p>
+          <p style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Cold foam, YoY</p>
         </div>
         <div style="border:1px solid rgba(255,255,255,0.32);border-radius:12px;padding:20px">
-          <dd style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+11.2%</dd>
-          <dt style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Creamy need, YoY</dt>
+          <p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+11.2%</p>
+          <p style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Creamy need, YoY</p>
         </div>
         <div style="border:1px solid rgba(255,255,255,0.32);border-radius:12px;padding:20px">
-          <dd style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+10.2%</dd>
-          <dt style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Soft need, YoY</dt>
+          <p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+10.2%</p>
+          <p style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Soft need, YoY</p>
         </div>
         <div style="border:1px solid rgba(255,255,255,0.32);border-radius:12px;padding:20px">
-          <dd style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+2.8%</dd>
-          <dt style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Rich need, YoY</dt>
+          <p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#ffffff">+2.8%</p>
+          <p style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.7)">Rich need, YoY</p>
         </div>
-      </dl>
+      </div>
       <p style="margin:0 0 16px;font-size:18px;line-height:30px;color:rgba(255,255,255,0.78);max-width:70ch">In 2027 texture claims differentiate faster than new flavor introductions. Flavor cycles are compressing, with the previous specialty cycle losing between 20 and 41 percent of its conversation in a single year, while texture formats extend the life of a flavor already in market. Cold foam grew 57 percent year over year in US food conversation as of July 2026 without introducing a new flavor at all.</p>
       <ul style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:10px;font-size:18px;line-height:30px;color:rgba(255,255,255,0.78);max-width:70ch">
         <li><strong style="font-weight:600;color:#ffffff">Beverage teams:</strong> ship the foam, cream top or layered serve before the next flavor.</li>
@@ -426,51 +454,51 @@
 </section>
   </sc-if>
 
-  <section aria-labelledby="faq-heading" style="background:#f6f9fc">
+  <section style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="faq-heading" style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Frequently asked questions</h2>
+    <h2 style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Frequently asked questions</h2>
     <div style="max-width:76ch">
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0" open>
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What is the flavor of the year for 2027?</summary>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What is the flavor of the year for 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Matcha is the flavor of the year for 2027. Matcha grew 26.1 percent year over year in the broad US flavor conversation as of July 2026 and holds an 8.5 percent menu share within the specialty conversation, where it accounts for a 77 percent social share on roughly 532,000 posts. The caveat is format: matcha latte as a standalone term declined 17.3 percent, so growth sits in newer serves.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What flavors are trending for 2027?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What flavors are trending for 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The flavors trending for 2027 are matcha, up 26.1 percent year over year, and strawberry matcha, up 16.4 percent from a small emerging base. Cold foam textures grew 57 percent, the fastest single signal in the flavor dataset. Banana pairings grew 36.8 percent. All four are measured in US social food conversation as of July 2026 and all four carry a grow call.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What flavors are going out of style in 2027?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What flavors are going out of style in 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The flavors going out of style in 2027 are green tea, down 40.8 percent year over year, boba, down 31.7 percent, yuzu, down 28.8 percent, mochi, down 26.5 percent, ube, down 21.6 percent, and lavender, down 20.8 percent. All six are measured in US specialty flavor conversation as of July 2026 and all six carry an exit call in this forecast.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What are the beverage flavor trends for 2027?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What are the beverage flavor trends for 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The beverage flavor trends for 2027 are matcha formats, cold foam texture and continued latte growth. Latte grew 9.9 percent year over year at a 9.1 percent US menu share, while cold foam grew 57 percent inside the specialty beverage conversation. Soda remains trending at a 40.8 percent menu share, which makes it the largest available surface for a texture led or format led beverage launch.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">How is a flavor forecast different from a flavor trend list?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">How is a flavor forecast different from a flavor trend list?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">A flavor trend list names what is popular now, usually ranked by a single growth figure. A flavor forecast assigns each flavor a lifecycle stage and projects where it lands next year, which is why a fast growing flavor can still receive an exit call if it is growing off a declining base. The forecast frame is what separates a hold call from a grow call. See <a href="/forecast/">how these forecasts are built</a>.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">Is matcha still trending in 2027?</summary>
-        <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Matcha is still trending going into 2027, with nuance. The base flavor grew 26.1 percent year over year in US social food conversation as of July 2026, and extensions such as strawberry matcha grew 16.4 percent. The default 2024 era serve is fading though, with matcha latte as a standalone term down 17.3 percent, so the growth sits in new formats and pairings rather than the familiar latte.</p>
-      </details>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">Is matcha still trending in 2027?</h3>
+        <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Matcha is still trending going into 2027, with nuance. The base flavor grew 26.1 percent year over year in US social food conversation as of July 2026, and extensions such as strawberry matcha grew 16.4 percent. The default 2024 era serve is fading though, with matcha latte as a standalone term down 17.3 percent, so the growth sits in new formats and pairings rather than the familiar latte. The full 2027 flavor report is published on <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-faq-answer" target="_blank" rel="noopener">Tastewise</a>.</p>
+      </div>
     </div>
     </div>
 </section>
 
-  <section aria-labelledby="cta-heading" style="background:#ffffff">
+  <section style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:64px 32px">
-    <div style="background:#1c1e54;border-radius:12px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+    <div style="background-color:#1c1e54;background-image:linear-gradient(rgba(13,20,64,0.82),rgba(13,20,64,0.9)),url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?fm=jpg&amp;q=72&amp;w=1600&amp;auto=format&amp;fit=crop');background-size:cover;background-position:center;border-radius:12px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
       <div style="max-width:56ch">
-        <h2 id="cta-heading" style="margin:0 0 12px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300;color:#ffffff">Track flavor trends in real time</h2>
+        <h2 style="margin:0 0 12px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300;color:#ffffff">Track flavor trends in real time</h2>
         <p style="margin:0;font-size:18px;line-height:30px;color:rgba(255,255,255,0.78)">Flavor cycles now compress inside a single year. A July 2026 snapshot is a starting point, not a plan.</p>
       </div>
-      <span role="button" aria-disabled="true" style="display:inline-block;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.7);font-size:17px;border-radius:12px;padding:11px 22px;border:1px solid rgba(255,255,255,0.32)">Link coming soon</span>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-inline-callout" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#ffffff;color:#0d253d;font-size:15px;font-weight:500;border-radius:9999px;padding:12px 24px;text-decoration:none;white-space:nowrap">Track flavor trends in real time</a>
     </div>
     </div>
 </section>
 
-  <section aria-label="Related pages" style="background:#f6f9fc">
+  <section style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:40px 32px">
     <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Back to <a href="/">the full food trends 2027 list</a>, or read <a href="/forecast/">how these forecasts are built</a>.</p>
   </div>
@@ -478,27 +506,34 @@
 
 </main>
 
-<footer style="background:#1c1e54">
-  <div data-footer-grid="1" style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1fr;gap:40px">
-    <div>
-      <img src="/assets/logo.svg" alt="FoodTrends2027" width="196" height="28" style="height:24px;width:auto;display:block;margin:0 0 16px">
-      <p style="margin:0;font-size:14px;line-height:20px;color:#64748d">An independent, data led resource forecasting US food and beverage trends for 2027.</p>
-    </div>
-    <nav aria-label="Footer">
-      <h2 style="margin:0 0 14px;font-size:14px;font-weight:600;color:#0d253d">Pages</h2>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <a href="/" style="font-size:14px;color:#64748d;text-decoration:none">Food trends 2027</a>
-        <a href="/forecast/" style="font-size:14px;color:#64748d;text-decoration:none">2027 food trends forecast by category</a>
-        <a href="/flavors/" aria-current="page" style="font-size:14px;color:#64748d;text-decoration:none">Food flavors forecast for 2027</a>
+<footer style="background:#f6f9fc;padding:0 20px 28px">
+  <div style="max-width:1240px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.58));backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);border:1px solid rgba(255,255,255,0.9);box-shadow:rgba(13,37,61,0.10) 0 12px 32px, rgba(13,37,61,0.05) 0 2px 8px, inset rgba(255,255,255,0.9) 0 1px 0;border-radius:28px;padding:48px 40px 24px">
+    <div data-footer-grid="1" style="display:grid;grid-template-columns:1.4fr 1fr 1.3fr;gap:44px">
+      <div>
+        <img src="/assets/logo.svg" alt="foodtrends27" width="172" height="32" style="height:24px;width:auto;display:block;margin:0 0 16px">
+        <p style="margin:0 0 20px;font-size:14px;line-height:22px;color:#5a6579;max-width:34ch">An independent, data led resource forecasting US food and beverage trends for 2027.</p>
+        <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-footer-cta" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#533afd;color:#ffffff;font-size:15px;font-weight:500;border-radius:9999px;padding:11px 22px;text-decoration:none;box-shadow:rgba(83,58,253,0.28) 0 6px 18px">Get the 2027 report</a>
       </div>
-    </nav>
-    <div>
-      <h2 style="margin:0 0 14px;font-size:14px;font-weight:600;color:#0d253d">Methodology</h2>
-      <p style="margin:0;font-size:14px;line-height:20px;color:#64748d">Growth and menu figures come from analysis of US social, menu and retail food data, July 2026. Search demand figures come from Ahrefs, US, July 2026. Every flavor carries a lifecycle stage as its confidence signal.</p>
+      <div>
+        <h2 style="margin:0 0 14px;font-size:14px;font-weight:500;color:#0d253d">Pages</h2>
+        <nav aria-label="Footer" style="display:flex;flex-direction:column;gap:10px">
+          <a href="/" style="font-size:14px;color:#5a6579;text-decoration:none">Food trends 2027</a>
+          <a href="/forecast/" style="font-size:14px;color:#5a6579;text-decoration:none">2027 food trends forecast by category</a>
+          <a href="/flavors/" style="font-size:14px;color:#5a6579;text-decoration:none">Food flavors forecast for 2027</a>
+        </nav>
+      </div>
+      <div>
+        <h2 style="margin:0 0 14px;font-size:14px;font-weight:500;color:#0d253d">Methodology</h2>
+        <p style="margin:0 0 16px;font-size:14px;line-height:22px;color:#5a6579">Growth and menu figures come from analysis of US social, menu and retail food data, July 2026. Search demand figures come from Ahrefs, US, July 2026. Every flavor carries a lifecycle stage as its confidence signal.</p>
+        <p style="margin:0;font-size:14px;line-height:22px;color:#5a6579">Data updated: <time datetime="2026-07">July 2026</time>. Last updated: <time datetime="2026-07-31">July 31, 2026</time>.</p>
+      </div>
     </div>
-    <div>
-      <h2 style="margin:0 0 14px;font-size:14px;font-weight:600;color:#0d253d">Data vintage</h2>
-      <p style="margin:0;font-size:14px;line-height:20px;color:#64748d">Data updated: <time datetime="2026-07">July 2026</time>. Last updated: <time datetime="2026-07-31">July 31, 2026</time>.</p>
+    <div style="margin:36px 0 0;padding:20px 0 0;border-top:1px solid rgba(13,37,61,0.10);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <p style="margin:0;font-size:13px;color:#5a6579">© 2026 FoodTrends2027</p>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=flavors-footer-powered" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+        <span style="font-size:13px;color:#5a6579">Powered by</span>
+        <img src="/assets/tastewise-logo.svg" alt="Tastewise" width="255" height="56" style="height:18px;width:auto;display:block">
+      </a>
     </div>
   </div>
 </footer>

@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="/assets/favicon.svg" />
 <meta name="theme-color" content="#0d253d" />
 <link rel="canonical" href="https://foodtrends2027.com/" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="FoodTrends2027" />
 <meta property="og:locale" content="en_US" />
@@ -37,6 +37,7 @@
 <meta name="twitter:image:alt" content="Food trends 2027 ranked by year over year US growth, with matcha leading." />
 <style>
   html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 92px; }
   body { margin: 0; background: #ffffff; color: #273951; font-family: Inter, 'SF Pro Display', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 15px; font-feature-settings: "ss01"; -webkit-font-smoothing: antialiased; }
   a { color: #533afd; text-decoration: none; }
   a:hover { color: #4434d4; text-decoration: underline; text-underline-offset: 3px; }
@@ -46,13 +47,20 @@
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
   .skip-link { position: absolute; left: 8px; top: -48px; z-index: 100; background: #533afd; color: #ffffff; padding: 10px 16px; border-radius: 8px; font-size: 14px; text-decoration: none; transition: top 0.15s ease; }
   .skip-link:focus { top: 8px; color: #ffffff; text-decoration: none; outline: 2px solid #0d253d; outline-offset: 2px; }
-  a:focus-visible, button:focus-visible { outline: 2px solid #533afd; outline-offset: 2px; border-radius: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #533afd; outline-offset: 2px; border-radius: 2px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .skip-link { transition: none; } }
   @media (max-width: 1023px) {
     [data-split] { grid-template-columns: 1fr !important; gap: 40px !important; align-items: start !important; }
     [data-h1] { font-size: 36px !important; letter-spacing: -0.72px !important; }
     [data-pad] { padding-left: 20px !important; padding-right: 20px !important; }
-    [data-footer-grid] { grid-template-columns: 1fr 1fr !important; }
+    [data-footer-grid] { grid-template-columns: 1fr !important; gap: 32px !important; }
+  }
+  @media (max-width: 700px) {
+    [data-navbar] { border-radius: 22px !important; height: auto !important; flex-direction: column; align-items: stretch !important; gap: 0 !important; padding: 12px 16px !important; }
+    [data-navtop] { justify-content: space-between; width: 100%; }
+    [data-navactions] { width: 100%; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(13,37,61,0.10); justify-content: space-between !important; gap: 12px !important; }
+    [data-navlinks] { gap: 14px !important; }
+    [data-navlinks] a { font-size: 13px !important; }
   }
 </style>
 <script type="application/ld+json">
@@ -197,7 +205,7 @@
         {
           "@type": "Question",
           "name": "Will there be a food trends 2027 report?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The food trends 2027 report is maintained on this page and in the linked 2027 forecast rather than as a fixed annual PDF. Both are built on US social, menu and retail food data with a July 2026 vintage, and both are revised as new data lands. Every figure carries the period it was measured in, so readers can see how current a call is." }
+          "acceptedAnswer": { "@type": "Answer", "text": "The food trends 2027 report is maintained on this page and in the linked 2027 forecast rather than as a fixed annual PDF. Both are built on US social, menu and retail food data with a July 2026 vintage, and both are revised as new data lands. Every figure carries the period it was measured in, so readers can see how current a call is. The full 2027 report is published on Tastewise." }
         }
       ]
     }
@@ -208,58 +216,69 @@
 
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #e3e8ee">
-  <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-    <a href="/" aria-label="FoodTrends2027 home" style="display:block"><img src="/assets/logo.svg" alt="FoodTrends2027" width="196" height="28" style="height:26px;width:auto;display:block"></a>
-    <div style="display:flex;align-items:center;gap:22px">
-      <a href="/" aria-current="page" style="font-size:14px;color:#533afd;font-weight:600;text-decoration:none">Home</a>
-      <a href="/forecast/" style="font-size:14px;color:#273951;text-decoration:none">2027 forecast</a>
-      <a href="/flavors/" style="font-size:14px;color:#273951;text-decoration:none">Flavors forecast</a>
+<div style="position:sticky;top:0;z-index:50;padding:14px 20px 0;background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,255,255,0))">
+  <nav aria-label="Primary" data-navbar="1" style="max-width:1240px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.58));backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);border:1px solid rgba(255,255,255,0.9);box-shadow:rgba(13,37,61,0.10) 0 12px 32px, rgba(13,37,61,0.05) 0 2px 8px, inset rgba(255,255,255,0.9) 0 1px 0;border-radius:9999px;padding:0 12px 0 22px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <div data-navtop="1" style="display:flex;align-items:center;gap:18px;min-width:0">
+      <a href="/" aria-label="foodtrends27 home" style="display:block;flex:none"><img src="/assets/logo.svg" alt="foodtrends27" width="172" height="32" style="height:24px;width:auto;display:block"></a>
+      <span aria-hidden="true" style="width:1px;height:22px;background:rgba(13,37,61,0.14);flex:none"></span>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-nav-credit" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:7px;text-decoration:none;flex:none">
+        <span style="font-size:12px;color:#5a6579;white-space:nowrap">Data by</span>
+        <img src="/assets/tastewise-logo.svg" alt="Tastewise" width="255" height="56" style="height:17px;width:auto;display:block">
+      </a>
     </div>
-  </div>
-</nav>
+    <div data-navactions="1" style="display:flex;align-items:center;gap:20px">
+      <div data-navlinks="1" style="display:flex;align-items:center;gap:20px">
+        <a href="/" aria-current="page" style="font-size:14px;color:#533afd;font-weight:500;text-decoration:none">Home</a>
+        <a href="/forecast/" style="font-size:14px;color:#273951;font-weight:400;text-decoration:none">2027 forecast</a>
+        <a href="/flavors/" style="font-size:14px;color:#273951;font-weight:400;text-decoration:none">Flavors forecast</a>
+      </div>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-nav-button" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#0d253d;font-size:14px;font-weight:500;border-radius:9999px;padding:9px 18px;text-decoration:none;border:1px solid rgba(255,255,255,0.9);box-shadow:rgba(13,37,61,0.08) 0 2px 8px">Get the report</a>
+    </div>
+  </nav>
+</div>
 
 <main id="main">
 <section aria-labelledby="hero-heading" style="position:relative;overflow:hidden;background:#ffffff">
-  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:540px;background:radial-gradient(62% 120% at 6% 0%, #f5e9d4 0%, rgba(245,233,212,0) 60%), radial-gradient(46% 110% at 30% 6%, #ffd9a8 0%, rgba(255,217,168,0) 62%), radial-gradient(56% 130% at 56% 0%, #cbc6fe 0%, rgba(203,198,254,0) 64%), radial-gradient(48% 120% at 80% 6%, #533afd 0%, rgba(83,58,253,0) 60%), radial-gradient(42% 100% at 97% 22%, #ea2261 0%, rgba(234,34,97,0) 58%);filter:blur(28px);opacity:0.6"></div>
+  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:540px;background:radial-gradient(62% 120% at 6% 0%, #f5e9d4 0%, rgba(245,233,212,0) 60%), radial-gradient(46% 110% at 30% 6%, #ffd9a8 0%, rgba(255,217,168,0) 62%), radial-gradient(56% 130% at 56% 0%, #cbc6fe 0%, rgba(203,198,254,0) 64%), radial-gradient(48% 120% at 80% 6%, #533afd 0%, rgba(83,58,253,0) 60%), radial-gradient(42% 100% at 97% 22%, #c2154a 0%, rgba(234,34,97,0) 58%);filter:blur(28px);opacity:0.6"></div>
   <div data-pad="1" data-split="1" style="position:relative;max-width:1240px;margin:0 auto;padding:88px 32px 72px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:end">
     <div>
-      <h1 id="hero-heading" data-h1="1" style="margin:0;font-size:56px;line-height:1.03;letter-spacing:-1.4px;font-weight:300;color:#0d253d;max-width:19ch;text-wrap:pretty">Food trends 2027: what America eats next, ranked by data</h1>
+      <h1 id="hero-heading" data-h1="1" style="margin:0;font-size:56px;line-height:1.03;letter-spacing:-1.4px;font-weight:300;color:#0d253d;max-width:19ch;text-wrap:pretty">2027 Food Trends</h1>
       <p style="margin:24px 0 0;font-size:16px;line-height:1.5;color:#273951;max-width:54ch">Eight trends ranked by year over year growth across US social, menu and retail food data, with the declines most 2027 lists leave out.</p>
+      <div style="margin:32px 0 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-hero-cta" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#533afd;color:#ffffff;font-size:15px;font-weight:500;border-radius:9999px;padding:11px 22px;text-decoration:none;box-shadow:rgba(83,58,253,0.28) 0 6px 18px">Get the 2027 food trends report</a>
+        <a href="#trend-data" style="font-size:15px;color:#533afd;text-decoration:none">Read the data first</a>
+      </div>
+      <p style="margin:16px 0 0;font-size:13px;color:#5a6579">Full report on Tastewise. Free, no download gate.</p>
     </div>
-    <aside aria-labelledby="movers-label" style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;box-shadow:rgba(0,55,112,0.08) 0 8px 24px, rgba(0,55,112,0.04) 0 2px 6px;padding:24px">
-      <p id="movers-label" style="margin:0 0 8px;font-size:13px;letter-spacing:-0.39px;color:#64748d">Fastest movers, year over year to July 2026</p>
-      <dl style="margin:0">
+    <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;box-shadow:rgba(0,55,112,0.08) 0 8px 24px, rgba(0,55,112,0.04) 0 2px 6px;padding:24px">
+      <p style="margin:0 0 8px;font-size:13px;letter-spacing:-0.39px;color:#5a6579">Fastest movers, year over year to July 2026</p>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Event occasions</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+48.7%</dd>
+          <span style="font-size:15px;color:#0d253d">Event occasions</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+48.7%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Matcha</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+26.1%</dd>
+          <span style="font-size:15px;color:#0d253d">Matcha</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+26.1%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Tacos</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+17.4%</dd>
+          <span style="font-size:15px;color:#0d253d">Tacos</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+17.4%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e3e8ee">
-          <dt style="font-size:15px;color:#0d253d">Chicken wings</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+16.7%</dd>
+          <span style="font-size:15px;color:#0d253d">Chicken wings</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">+16.7%</span>
         </div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0">
-          <dt style="font-size:15px;color:#0d253d">Generic healthy claim</dt>
-          <dd style="margin:0;font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">-38.5%</dd>
+          <span style="font-size:15px;color:#0d253d">Generic healthy claim</span>
+          <span style="font-size:15px;font-feature-settings:'tnum';letter-spacing:-0.42px;color:#0d253d">-38.5%</span>
         </div>
-      </dl>
-      <p style="margin:16px 0 0;font-size:11px;line-height:1.4;color:#64748d">Analysis of US social, menu and retail food data, <time datetime="2026-07">July 2026</time>.</p>
-    </aside>
+      <p style="margin:16px 0 0;font-size:11px;line-height:1.4;color:#5a6579">Analysis of US social, menu and retail food data, July 2026.</p>
+    </div>
   </div>
 </section>
 
-<section aria-labelledby="definition-heading" style="background:#ffffff">
+<section aria-label="What 2027 food trends means" style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:64px 32px">
-
-  <h2 id="definition-heading" class="sr-only">What are food trends 2027?</h2>
 
   <div id="definition" style="border:1px solid #e3e8ee;background:#ffffff;border-radius:12px;padding:28px;margin:0 0 20px">
     <p style="margin:0;font-size:20px;line-height:32px;color:#0d253d">Food trends 2027 are the ingredients, flavors, dishes and consumer behaviors projected to grow across US menus, retail shelves and social conversation during 2027, identified by tracking year over year growth and lifecycle stage across social, menu and retail data.</p>
@@ -273,40 +292,50 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:0 0 64px">
     <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
       <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#533afd">+26.1%</p>
-      <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">Matcha, YoY US social growth</p>
+      <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">Matcha, YoY US social growth</p>
     </div>
     <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
       <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#533afd">+48.7%</p>
-      <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">Event occasion need, YoY</p>
+      <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">Event occasion need, YoY</p>
     </div>
     <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;padding:28px">
-      <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#ea2261">-38.5%</p>
-      <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#64748d">The generic healthy claim, YoY</p>
+      <p style="margin:0;font-size:32px;font-weight:300;letter-spacing:-0.64px;line-height:1;font-feature-settings:'tnum';color:#c2154a">-38.5%</p>
+      <p style="margin:8px 0 0;font-size:14px;line-height:20px;color:#5a6579">The generic healthy claim, YoY</p>
     </div>
   </div>
 
     </div>
 </section>
 
-<section aria-labelledby="top-trends" style="background:#f6f9fc">
+<section style="background:#ffffff">
+  <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:8px 32px 56px">
+    <figure style="margin:0">
+      <div style="position:relative;aspect-ratio:21/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5)">
+        <img src="https://images.unsplash.com/photo-1717398804998-ad2d48822518?fm=jpg&amp;q=72&amp;w=2000&amp;auto=format&amp;fit=crop" alt="Close up of an iced matcha drink with ice cubes in a glass" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <figcaption style="margin:14px 0 0;font-size:13px;color:#5a6579">Matcha leads the 2027 list at 26.1 percent year over year growth.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="trend-data" aria-labelledby="top-trends" style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
     <h2 id="top-trends" style="margin:0 0 8px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">The top 8 food trends for 2027</h2>
     <p style="margin:0 0 8px;font-size:18px;line-height:30px;color:#273951;max-width:68ch">Ranked by year over year growth in US social food conversation, with menu share where available. Every trend below sits in the trending lifecycle stage.</p>
-    <p style="margin:0 0 28px;font-size:12px;color:#64748d">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
+    <p style="margin:0 0 28px;font-size:12px;color:#5a6579">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
 
-    <ol style="list-style:none;margin:0;padding:0">
+    <div>
 
-      <li>
-      <article aria-labelledby="trend-1" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">01</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">01</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-1" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Matcha</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Matcha</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+26.1%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">YoY social growth</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">5.6%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">US menu share</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+26.1%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">YoY social growth</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">5.6%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">US menu share</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:54%;height:100%;background:#533afd"></div></div>
@@ -314,18 +343,16 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Matcha grew 26.1 percent year over year in US social food conversation as of July 2026. It has crossed from specialty cafés into mainstream beverage and dessert menus, and its extension formats now grow faster than the base ingredient. <strong style="font-weight:600">Implication:</strong> prioritize matcha line extensions in beverages and desserts before shelf space saturates.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-2" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">02</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">02</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-2" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Tacos</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Tacos</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+17.4%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">YoY social growth</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+17.4%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">YoY social growth</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:36%;height:100%;background:#533afd"></div></div>
@@ -333,19 +360,17 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Tacos grew 17.4 percent year over year in US social food conversation as of July 2026. Handheld formats keep absorbing global flavors, and the taco is the leading carrier of that borrowing. <strong style="font-weight:600">Implication:</strong> use the taco format as a low risk vehicle for new flavor introductions.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-3" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">03</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">03</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-3" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Chicken wings</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Chicken wings</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+16.7%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">YoY social growth</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">10.6%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">US menu share</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+16.7%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">YoY social growth</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">10.6%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">US menu share</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:34%;height:100%;background:#533afd"></div></div>
@@ -353,19 +378,17 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Chicken wings grew 16.7 percent year over year in US social food conversation as of July 2026 and hold a 10.6 percent US menu share. Wings are the sauce innovation platform of US menus, where a new flavor reaches a customer with no format risk attached. <strong style="font-weight:600">Implication:</strong> wings are the fastest route to market for new sauce and rub concepts.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-4" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">04</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">04</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-4" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Steak and premium cuts</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Steak and premium cuts</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+16.3%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Steak, YoY</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+11.9%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Ribs, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+16.3%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Steak, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+11.9%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Ribs, YoY</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:33%;height:100%;background:#533afd"></div></div>
@@ -373,19 +396,17 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Steak grew 16.3 percent and ribs grew 11.9 percent year over year in US social food conversation as of July 2026. Premiumization of familiar proteins is outperforming novel protein categories by a wide margin. <strong style="font-weight:600">Implication:</strong> invest in cut, aging and preparation stories rather than new protein categories.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-5" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">05</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">05</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-5" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Loaded fries</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Loaded fries</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+10.8%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">French fries, YoY</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">12.2%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">US menu share</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+10.8%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">French fries, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">12.2%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">US menu share</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:22%;height:100%;background:#533afd"></div></div>
@@ -393,20 +414,18 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">French fries grew 10.8 percent year over year in US social food conversation as of July 2026 and hold a 12.2 percent US menu share. Comfort carriers with topping systems drive attachment and check growth without adding a new base SKU. <strong style="font-weight:600">Implication:</strong> build modular topping programs on carriers you already stock.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-6" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">06</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">06</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-6" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Lattes and specialty milk drinks</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Lattes and specialty milk drinks</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+9.9%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Latte, YoY</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">9.1%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">US menu share</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+57%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Cold foam, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+9.9%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Latte, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">9.1%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">US menu share</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+57%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Cold foam, YoY</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:20%;height:100%;background:#533afd"></div></div>
@@ -414,19 +433,17 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Latte grew 9.9 percent year over year in US social food conversation as of July 2026 at a 9.1 percent menu share, while cold foam grew 57 percent inside the matcha and specialty beverage conversation. Texture is the new flavor in beverages. <strong style="font-weight:600">Implication:</strong> develop foam, cream top and layered texture formats ahead of new flavor SKUs.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-7" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">07</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">07</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-7" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Beef, elevated</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Beef, elevated</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+9.1%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">YoY social growth</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">17.3%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">US menu share</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+9.1%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">YoY social growth</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#0d253d">17.3%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">US menu share</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:19%;height:100%;background:#533afd"></div></div>
@@ -434,21 +451,19 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Beef grew 9.1 percent year over year in US social food conversation as of July 2026 and holds a 17.3 percent US menu share, the largest share of any protein tracked here. Growth is concentrated in elevated preparations rather than volume formats. <strong style="font-weight:600">Implication:</strong> beef premiumization supports price architecture in inflationary menus.</p>
         </div>
       </article>
-      </li>
 
-      <li>
-      <article aria-labelledby="trend-8" style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
-        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#a8c3de;line-height:1;font-feature-settings:'tnum'">08</p>
+      <article style="border-top:1px solid #e3e8ee;padding:32px 0;display:grid;grid-template-columns:72px 1fr;gap:24px;align-items:start">
+        <p aria-hidden="true" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;color:#5a6579;line-height:1;font-feature-settings:'tnum'">08</p>
         <div>
           <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px">
-            <h3 id="trend-8" style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Event driven eating</h3>
+            <h3 style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px">Event driven eating</h3>
             <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#4434d4;background:#e7e5fe;border-radius:9999px;padding:4px 10px">Trending</span>
-            <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#64748d;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Behavior trend</span>
+            <span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#5a6579;background:#f6f9fc;border-radius:9999px;padding:4px 10px">Behavior trend</span>
           </div>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin:0 0 12px">
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+48.7%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Event need, YoY</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+10.1%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Celebration, YoY</p></div>
-            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+10.5%</p><p style="margin:6px 0 0;font-size:12px;color:#64748d">Weekend, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+48.7%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Event need, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+10.1%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Celebration, YoY</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:300;letter-spacing:-0.26px;line-height:1;font-feature-settings:'tnum';color:#533afd">+10.5%</p><p style="margin:6px 0 0;font-size:12px;color:#5a6579">Weekend, YoY</p></div>
           </div>
           <sc-if value="{{ showGrowthBars }}" hint-placeholder-val="{{ true }}">
             <div aria-hidden="true" style="height:6px;background:#eef2f7;border-radius:9999px;overflow:hidden;margin:0 0 16px"><div style="width:100%;height:100%;background:#533afd"></div></div>
@@ -456,21 +471,20 @@
           <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">The event consumer need grew 48.7 percent year over year in US food conversation as of July 2026, the largest single movement in the dataset. Occasions are outgrowing ingredients. <strong style="font-weight:600">Implication:</strong> package products and menu bundles around named occasions, not just flavors.</p>
         </div>
       </article>
-      </li>
 
-    </ol>
+    </div>
     </div>
 </section>
 
-  <section aria-labelledby="declines" style="background:#ffffff">
+  <section style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="declines" style="margin:0 0 8px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">What declines in 2027</h2>
+    <h2 style="margin:0 0 8px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">What declines in 2027</h2>
     <p style="margin:0 0 8px;font-size:18px;line-height:30px;color:#273951;max-width:68ch">The trends most predicted for 2025 and 2026 are already past peak. This is the half of the list most annual roundups omit.</p>
-    <p style="margin:0 0 24px;font-size:12px;color:#64748d">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
+    <p style="margin:0 0 24px;font-size:12px;color:#5a6579">Data updated: <time datetime="2026-07">July 2026</time>. Source: analysis of US social, menu and retail food data, July 2026.</p>
 
     <div style="background:#ffffff;border:1px solid #e3e8ee;border-radius:12px;overflow:hidden;margin:0 0 24px">
       <table style="width:100%;border-collapse:collapse;font-size:17px">
-        <caption style="text-align:left;padding:20px 24px 12px;font-size:14px;font-weight:600;color:#64748d">Declining signals, US food conversation, year over year to July 2026</caption>
+        <caption style="text-align:left;padding:20px 24px 12px;font-size:14px;font-weight:600;color:#5a6579">Declining signals, US food conversation, year over year to July 2026</caption>
         <thead>
           <tr style="border-top:1px solid #e3e8ee;border-bottom:1px solid #e3e8ee;background:#f6f9fc">
             <th scope="col" style="text-align:left;padding:12px 24px;font-size:14px;font-weight:600">Signal</th>
@@ -479,11 +493,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Green tea</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#ea2261">-40.8%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">The generic healthy claim</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#ea2261">-38.5%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Boba</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#ea2261">-31.7%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
-          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Yuzu</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#ea2261">-28.8%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
-          <tr><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Ube</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#ea2261">-21.6%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#ea2261;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Green tea</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#c2154a">-40.8%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">The generic healthy claim</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#c2154a">-38.5%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Boba</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#c2154a">-31.7%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
+          <tr style="border-bottom:1px solid #f6f9fc"><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Yuzu</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#c2154a">-28.8%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
+          <tr><th scope="row" style="text-align:left;padding:14px 24px;font-weight:400">Ube</th><td style="padding:14px 24px;text-align:right;font-weight:600;color:#c2154a">-21.6%</td><td style="padding:14px 24px;text-align:right"><span style="font-size:11px;font-weight:400;letter-spacing:0.1px;color:#ffffff;background:#c2154a;border-radius:9999px;padding:4px 10px">Declining</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -496,28 +510,37 @@
     </div>
 </section>
 
-  <section aria-labelledby="methodology" style="background:#f6f9fc">
+  <section style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="methodology" style="margin:0 0 16px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">How these trends were identified</h2>
+    <h2 style="margin:0 0 16px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">How these trends were identified</h2>
     <p style="margin:0 0 16px;font-size:18px;line-height:30px;color:#273951;max-width:70ch">Every trend on this page is scored on three signals: year over year growth in US social food conversation, current US menu share, and lifecycle stage. Signals come from analysis of US social, menu and retail food data, July 2026, with search demand cross checked against Ahrefs, US, July 2026. A candidate only becomes a 2027 call when growth and lifecycle stage agree, which is what separates a durable trend from a single channel spike.</p>
     <p style="margin:0;font-size:18px;line-height:30px;color:#273951;max-width:70ch">The full four stage model, the category by category outlook and the accuracy limits of the method are set out in the <a href="/forecast/">2027 food trends forecast by category</a>.</p>
     </div>
 </section>
 
   <sc-if value="{{ showAudienceSection }}" hint-placeholder-val="{{ true }}">
-  <section aria-labelledby="by-audience" style="background:#ffffff">
+  <section style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="by-audience" style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Food trends 2027 by audience</h2>
+    <h2 style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Food trends 2027 by audience</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
       <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <div style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5);margin:0 0 18px">
+          <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?fm=jpg&amp;q=72&amp;w=900&amp;auto=format&amp;fit=crop" alt="Raw vegetables including peppers, potatoes and broccoli on a white surface" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
         <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">For CPG innovation teams</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Matcha extensions and texture formats justify NPD investment now. The base matcha ingredient is at 5.6 percent menu share and still growing 26.1 percent, so the window for a differentiated format is open rather than crowded. Cold foam, up 57 percent, is the cheapest texture claim to test.</p>
       </div>
       <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <div style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5);margin:0 0 18px">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?fm=jpg&amp;q=72&amp;w=900&amp;auto=format&amp;fit=crop" alt="Server carrying a plated dish through a restaurant dining room" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
         <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">For foodservice operators</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Attachment is where the 2027 growth sits. Wings at 10.6 percent menu share and fries at 12.2 percent are already on your line, so new sauces and topping systems raise check without new inventory. Tacos carry a new flavor with no format education required.</p>
       </div>
       <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <div style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#eef2f7,#e2e8f5);margin:0 0 18px">
+          <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?fm=jpg&amp;q=72&amp;w=900&amp;auto=format&amp;fit=crop" alt="Wide aisle of packaged groceries in a supermarket" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
         <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">For retailers and category managers</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Shelf allocation should follow specialty beverages and occasion bundles. The event need grew 48.7 percent, which supports named occasion merchandising over generic seasonal resets. Space taken from declining specialty flavors funds the move.</p>
       </div>
@@ -526,51 +549,51 @@
 </section>
   </sc-if>
 
-  <section aria-labelledby="faq-heading" style="background:#f6f9fc">
+  <section style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:80px 32px">
-    <h2 id="faq-heading" style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Frequently asked questions</h2>
+    <h2 style="margin:0 0 24px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300">Frequently asked questions</h2>
     <div style="max-width:76ch">
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0" open>
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What are the top food trends for 2027?</summary>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What are the top food trends for 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The top food trends for 2027 are matcha, growing 26.1 percent year over year. Tacos, up 17.4 percent, carry global flavors in a handheld format. Chicken wings, up 16.7 percent, drive sauce innovation. Steak, up 16.3 percent, leads protein premiumization. Loaded fries, up 10.8 percent, add topping systems. Lattes, up 9.9 percent, lead texture formats. Beef, up 9.1 percent, holds 17.3 percent menu share. Event driven eating grew 48.7 percent.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What is the biggest food trend for 2027?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What is the biggest food trend for 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Matcha is the biggest food trend for 2027. Matcha grew 26.1 percent year over year in US social food conversation as of July 2026 and holds a 5.6 percent US menu share, making it the fastest growing ingredient at meaningful scale. Its extension formats, including strawberry matcha and cold foam serves, grow faster than the base ingredient, which signals room to expand through 2027.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What food trends are declining going into 2027?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What food trends are declining going into 2027?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The food trends declining going into 2027 are green tea, down 40.8 percent year over year, boba, down 31.7 percent, yuzu, down 28.8 percent, and ube, down 21.6 percent, all measured in US specialty flavor conversation as of July 2026. The generic healthy claim fell 38.5 percent over the same period as health interest fragmented into specific functional needs such as energy, up 11.8 percent.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">How are 2027 food trends predicted?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">How are 2027 food trends predicted?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Food trends for 2027 are predicted by scoring each candidate trend on three signals: year over year growth in US social food conversation, current US menu share, and lifecycle stage. Lifecycle stage places a trend in one of four positions, emerging, trending, mature or declining. A trend qualifies as a 2027 call when growth and lifecycle stage agree, based on US social, menu and retail food data, July 2026. The full model sits in the <a href="/forecast/">2027 food trends forecast by category</a>.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">What is the difference between a food trend and a fad?</summary>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">What is the difference between a food trend and a fad?</h3>
         <p style="margin:0;font-size:18px;line-height:30px;color:#273951">A food trend is a sustained shift in demand that shows growth across several independent signals at once, typically social conversation, menu penetration and retail presence. A fad is a single channel spike, usually social only, that never converts into menu share or repeat purchase. The practical test is durability across signals, not the size of the initial spike.</p>
-      </details>
-      <details style="border-top:1px solid #e3e8ee;padding:28px 0">
-        <summary style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px;color:#0d253d;cursor:pointer">Will there be a food trends 2027 report?</summary>
-        <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The food trends 2027 report is maintained on this page and in the linked 2027 forecast rather than as a fixed annual PDF. Both are built on US social, menu and retail food data with a July 2026 vintage, and both are revised as new data lands. Every figure carries the period it was measured in, so readers can see how current a call is.</p>
-      </details>
+      </div>
+      <div style="border-top:1px solid #e3e8ee;padding:28px 0">
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:300;letter-spacing:-0.22px">Will there be a food trends 2027 report?</h3>
+        <p style="margin:0;font-size:18px;line-height:30px;color:#273951">The food trends 2027 report is maintained on this page and in the linked 2027 forecast rather than as a fixed annual PDF. Both are built on US social, menu and retail food data with a July 2026 vintage, and both are revised as new data lands. Every figure carries the period it was measured in, so readers can see how current a call is. The full 2027 report is published on <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-faq-answer" target="_blank" rel="noopener">Tastewise</a>.</p>
+      </div>
     </div>
     </div>
 </section>
 
-  <section aria-labelledby="cta-heading" style="background:#ffffff">
+  <section style="background:#ffffff">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:64px 32px">
-    <div style="background:#1c1e54;border-radius:12px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+    <div style="background-color:#1c1e54;background-image:linear-gradient(rgba(13,20,64,0.82),rgba(13,20,64,0.9)),url('https://images.unsplash.com/photo-1680633479678-72880cb9a29f?fm=jpg&amp;q=72&amp;w=1600&amp;auto=format&amp;fit=crop');background-size:cover;background-position:center;border-radius:12px;padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
       <div style="max-width:56ch">
-        <h2 id="cta-heading" style="margin:0 0 12px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300;color:#ffffff">Explore the live trend data</h2>
+        <h2 style="margin:0 0 12px;font-size:32px;line-height:1.1;letter-spacing:-0.64px;font-weight:300;color:#ffffff">Explore the live trend data</h2>
         <p style="margin:0;font-size:18px;line-height:30px;color:rgba(255,255,255,0.78)">The figures on this page are a July 2026 snapshot. The underlying social, menu and retail signals move weekly.</p>
       </div>
-      <span role="button" aria-disabled="true" style="display:inline-block;background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.7);font-size:17px;border-radius:12px;padding:11px 22px;border:1px solid rgba(255,255,255,0.32)">Link coming soon</span>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-inline-callout" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#ffffff;color:#0d253d;font-size:15px;font-weight:500;border-radius:9999px;padding:12px 24px;text-decoration:none;white-space:nowrap">Explore the live trend data</a>
     </div>
     </div>
 </section>
 
-  <section aria-label="Related pages" style="background:#f6f9fc">
+  <section style="background:#f6f9fc">
   <div data-pad="1" style="max-width:1240px;margin:0 auto;padding:40px 32px">
     <p style="margin:0;font-size:18px;line-height:30px;color:#273951">Next: <a href="/flavors/">food flavors forecast for 2027</a>, the flavor by flavor grow, hold and exit calls.</p>
   </div>
@@ -578,27 +601,34 @@
 
 </main>
 
-<footer style="background:#1c1e54">
-  <div data-footer-grid="1" style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1fr;gap:40px">
-    <div>
-      <img src="/assets/logo.svg" alt="FoodTrends2027" width="196" height="28" style="height:24px;width:auto;display:block;margin:0 0 16px">
-      <p style="margin:0;font-size:14px;line-height:20px;color:#64748d">An independent, data led resource forecasting US food and beverage trends for 2027.</p>
-    </div>
-    <nav aria-label="Footer">
-      <h2 style="margin:0 0 14px;font-size:14px;font-weight:600;color:#0d253d">Pages</h2>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <a href="/" aria-current="page" style="font-size:14px;color:#64748d;text-decoration:none">Food trends 2027</a>
-        <a href="/forecast/" style="font-size:14px;color:#64748d;text-decoration:none">2027 food trends forecast by category</a>
-        <a href="/flavors/" style="font-size:14px;color:#64748d;text-decoration:none">Food flavors forecast for 2027</a>
+<footer style="background:#f6f9fc;padding:0 20px 28px">
+  <div style="max-width:1240px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.58));backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);border:1px solid rgba(255,255,255,0.9);box-shadow:rgba(13,37,61,0.10) 0 12px 32px, rgba(13,37,61,0.05) 0 2px 8px, inset rgba(255,255,255,0.9) 0 1px 0;border-radius:28px;padding:48px 40px 24px">
+    <div data-footer-grid="1" style="display:grid;grid-template-columns:1.4fr 1fr 1.3fr;gap:44px">
+      <div>
+        <img src="/assets/logo.svg" alt="foodtrends27" width="172" height="32" style="height:24px;width:auto;display:block;margin:0 0 16px">
+        <p style="margin:0 0 20px;font-size:14px;line-height:22px;color:#5a6579;max-width:34ch">An independent, data led resource forecasting US food and beverage trends for 2027.</p>
+        <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-footer-cta" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#533afd;color:#ffffff;font-size:15px;font-weight:500;border-radius:9999px;padding:11px 22px;text-decoration:none;box-shadow:rgba(83,58,253,0.28) 0 6px 18px">Get the 2027 report</a>
       </div>
-    </nav>
-    <div>
-      <h2 style="margin:0 0 14px;font-size:14px;font-weight:600;color:#0d253d">Methodology</h2>
-      <p style="margin:0;font-size:14px;line-height:20px;color:#64748d">Growth and menu figures come from analysis of US social, menu and retail food data, July 2026. Search demand figures come from Ahrefs, US, July 2026. Every trend carries a lifecycle stage as its confidence signal.</p>
+      <div>
+        <h2 style="margin:0 0 14px;font-size:14px;font-weight:500;color:#0d253d">Pages</h2>
+        <nav aria-label="Footer" style="display:flex;flex-direction:column;gap:10px">
+          <a href="/" style="font-size:14px;color:#5a6579;text-decoration:none">Food trends 2027</a>
+          <a href="/forecast/" style="font-size:14px;color:#5a6579;text-decoration:none">2027 food trends forecast by category</a>
+          <a href="/flavors/" style="font-size:14px;color:#5a6579;text-decoration:none">Food flavors forecast for 2027</a>
+        </nav>
+      </div>
+      <div>
+        <h2 style="margin:0 0 14px;font-size:14px;font-weight:500;color:#0d253d">Methodology</h2>
+        <p style="margin:0 0 16px;font-size:14px;line-height:22px;color:#5a6579">Growth and menu figures come from analysis of US social, menu and retail food data, July 2026. Search demand figures come from Ahrefs, US, July 2026. Every trend carries a lifecycle stage as its confidence signal.</p>
+        <p style="margin:0;font-size:14px;line-height:22px;color:#5a6579">Data updated: <time datetime="2026-07">July 2026</time>. Last updated: <time datetime="2026-07-31">July 31, 2026</time>.</p>
+      </div>
     </div>
-    <div>
-      <h2 style="margin:0 0 14px;font-size:14px;font-weight:600;color:#0d253d">Data vintage</h2>
-      <p style="margin:0;font-size:14px;line-height:20px;color:#64748d">Data updated: <time datetime="2026-07">July 2026</time>. Last updated: <time datetime="2026-07-31">July 31, 2026</time>.</p>
+    <div style="margin:36px 0 0;padding:20px 0 0;border-top:1px solid rgba(13,37,61,0.10);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <p style="margin:0;font-size:13px;color:#5a6579">© 2026 FoodTrends2027</p>
+      <a href="https://tastewise.io/2027-food-trends?utm_source=foodtrends2027.com&amp;utm_medium=referral&amp;utm_campaign=seo-micro&amp;utm_content=home-footer-powered" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+        <span style="font-size:13px;color:#5a6579">Powered by</span>
+        <img src="/assets/tastewise-logo.svg" alt="Tastewise" width="255" height="56" style="height:18px;width:auto;display:block">
+      </a>
     </div>
   </div>
 </footer>
